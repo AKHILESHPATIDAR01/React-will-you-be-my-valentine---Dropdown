@@ -1,9 +1,9 @@
 import React, { useState,useReducer } from "react";
 import "./../styles/App.css";
-import Statedropdowm from "./Statedropdown";
-import Citydropdown from "./Citydropdown";
-import Landmarkdropdown from "./Lnadmarkdropdown";
-import { Col, Container, Row } from "react-bootstrap";
+// import Statedropdowm from "./Statedropdown";
+// import Citydropdown from "./Citydropdown";
+// import Landmarkdropdown from "./Lnadmarkdropdown";
+// import { Col, Container, Row } from "react-bootstrap";
 
 
 const states = [{
