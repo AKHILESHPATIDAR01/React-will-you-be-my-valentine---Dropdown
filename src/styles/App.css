@@ -14,3 +14,67 @@ button{
 .bg-pink{
 	background-color:pink;
 }
+
+#state-name select , #city-name select ,#landmark-name select {
+    margin: 20px;
+    width: 200px;   
+}
+
+
+
+label{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#state{
+    text-transform: uppercase;
+}
+
+#state-name{
+    width: 600px;
+    margin-bottom: 50px;
+}
+
+#state-title{
+    font-size: 30px;
+}
+
+#state-description{
+    margin: 20px;
+}
+
+#city{
+    text-transform: uppercase;
+}
+
+#city-name{
+    width: 600px;
+    margin-bottom: 50px;
+}
+
+#city-title{
+    font-size: 30px;
+}
+
+#city-description{
+    margin: 20px;
+}
+
+#landmark{
+    text-transform: uppercase;
+}
+
+#landmark-name{
+    width: 600px;
+    margin-bottom: 50px;
+}
+
+#landmark-title{
+    font-size: 30px;
+}
+
+#landmark-description{
+    margin: 20px;
+}
