@@ -1,13 +1,9 @@
 import React, { useState,useReducer } from "react";
 import "./../styles/App.css";
-// import Statedropdowm from "./Statedropdown";
-// import Citydropdown from "./Citydropdown";
-// import Landmarkdropdown from "./Lnadmarkdropdown";
-// import { Col, Container, Row } from "react-bootstrap";
+import Display from "./Display";
 
 
 const states = [{
-	id:"001",
 	name : "Madhya Pradesh",
 	description:"Madhya Pradesh, a large state in central India, retains landmarks from eras throughout Indian history.",
 	city :[{
@@ -39,7 +35,6 @@ const states = [{
 		}]
 	}]
 },{
-	id:"002",
 	name : "Jharkhand",
 	description:"Jharkhand is a state in eastern India. It's known for its waterfalls, the elegant Jain temples of Parasnath Hill and the elephants and tigers of Betla National Park.",
 	city :[{
@@ -74,7 +69,6 @@ const states = [{
 		}]
 	}]
 },{
-	id:"003",
 	name : "Assam",
 	description:"Assam is a state in northeastern India known for its wildlife, archeological sites and tea plantations. ",
 	city :[{
@@ -109,7 +103,6 @@ const states = [{
 		}]
 	}]
 },{
-	id:"004",
 	name : "Bihar",
 	description:"Bihar is a state in East India, bordering Nepal. It is divided by the River Ganges, which floods its fertile plains. Important Buddhist pilgrimage sites include the Bodhi Tree in Bodhgaya's Mahabodhi Temple, under which the Buddha allegedly meditated.",
 	city :[{
@@ -146,137 +139,15 @@ const states = [{
 }];
 
 
-
-
-function App() {
-    const [state, setState] = useState(0);
-    const [city, setCity] = useState(state);
-    const [landMark, setLandMark] = useState(city);
-
-    const changeState=(e)=>{
-        setState(e.target.value)
-    }
-
-    const updateCity=(e)=>{
-        setCity(e.target.value)
-    }
-
-    const updateLandmark=(e)=>{
-        setLandMark(e.target.value)
-    }
-
-    return (
-        <div className='container' >
-            <div id="state-name">
-                <label htmlFor="state">State</label>
-                <select id="state" onChange={changeState} >
-                {states.map((state, id)=>{
-                        return(
-                        	<option key={id} value={id}>{state.name}</option>
-                        )
-                    })
-                }
-                </select>
-                <div id='state-title' >{states[state].name}</div>
-                <div id="state-description" >{states[state].description}</div>
-            </div>
-            <div id="city-name">
-                <label htmlFor="city">City</label>
-                <select id="city" onChange={updateCity}  >
-                {
-                    states[state].city.map((city, id)=>{
-                        return(
-                        <option key={id} value={id}>{city.name}</option>
-                        )
-                    })
-                }
-                </select>
-                <div id='city-title' >{states[state].city[city].name}</div>
-                <div id="city-description" >{states[state].city[city].description}</div>
-            </div>
-            <div id="landmark-name">
-                <label htmlFor="landmark">City</label>
-                <select id="landmark" onChange={updateLandmark}  >
-                {
-                    states[state].city[city].landmarks.map((landmark, id)=>{
-                        return(
-                        <option key={id} value={id}>{landmark.name}</option>
-                        )
-                    })
-                }
-                </select>
-                <div id='landmark-title' >{states[state].city[city].landmarks[landMark].name}</div>
-                <div id="landmark-description" >{states[state].city[city].landmarks[landMark].description}</div>
-            </div>
-        </div>
-    )
+function App() 
+{
+	// Do not alter/remove main div
+	return (
+	<div id="main">
+		<Display states={states}/>
+	</div>
+	);
 }
 
 
-
-
-// function App() 
-// {
-
-// 	console.log(states);
-
-// 	const citys = states.map((state)=>{
-			
-// 	})
-
-// 	// Do not alter/remove main div
-// 	return (
-// 	<div id="main">
-		
-// 		{/* {listOne} */}
-
-// 		{/* <ul>
-// 			{
-// 				states.map(state =>(
-// 					<div key={state.id}> {state.id} 
-// 							<li>{state.name}</li>
-// 							<li>{state.description}</li>
-// 					</div>
-// 				))
-// 			}
-// 		</ul>
-// 			 */}
-
-	
-
-// 		<Container>
-
-// 			<Row>
-// 				<Col>
-// 				<section id="state">
-// 					<Statedropdowm listStateName={listStateName}/>
-// 				</section>
-// 				<section id="city">
-// 					<Citydropdown />
-// 				</section>
-// 				<section id="landmark">
-// 					<Landmarkdropdown />
-// 				</section>
-// 				</Col>
-
-// 				<Col>
-// 				<section id="state">
-// 					<Statedropdowm />
-// 				</section>
-// 				<section id="city">
-// 					<Citydropdown />
-// 				</section>
-// 				<section id="landmark">
-// 					<Landmarkdropdown />
-// 				</section>
-// 				</Col>
-// 			</Row>
-// 		</Container>
-
-		
-// 	</div>
-// 	);
-// }
-
-
-export default App; 
+export default App;
